@@ -12,7 +12,10 @@
 hs_err_pid*
 /bin/
 
-ant.properties
+**/config.properties
 gradle.properties
 .classpath
 .project
+.gradle
+.settings
+build

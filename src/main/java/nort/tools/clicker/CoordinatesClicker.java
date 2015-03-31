@@ -15,9 +15,9 @@ import javafx.stage.Stage;
 
 public abstract class CoordinatesClicker extends Application {
 
-  abstract EventHandler<MouseEvent> getEventHandler();
+  public abstract EventHandler<MouseEvent> getEventHandler();
 
-  abstract Image getImage();
+  public abstract Image getImage();
 
   @Override
   public void start(Stage stage) throws IOException {

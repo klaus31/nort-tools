@@ -1,4 +1,4 @@
-package nort.tools.clicker;
+package nort.tools.main;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,8 +11,10 @@ import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import nort.tools.NortConfig;
+import nort.tools.clicker.CoordinatesClicker;
 
-public class CoordinatesClickerP0001 extends CoordinatesClicker {
+public class P0001CoordinatesClicker extends CoordinatesClicker {
 
   private static String imageIn;
   private static String csvFormat;
@@ -23,8 +25,8 @@ public class CoordinatesClickerP0001 extends CoordinatesClicker {
   }
 
   public static void main(String[] args) {
-    imageIn = args[0];
-    csvFormat = args[1];
+    imageIn = NortConfig.get("p0001.imageIn");
+    csvFormat = NortConfig.get("p0001.csvFormat");
     Application.launch(args);
   }
 
@@ -69,7 +71,7 @@ public class CoordinatesClickerP0001 extends CoordinatesClicker {
   }
 
   @Override
-  Image getImage() {
+  public Image getImage() {
     return new Image(imageIn, 800, 600, true, true);
   }
 }
