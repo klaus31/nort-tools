@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="nort-tools">
+
+	<property file="ant.properties" />
+
+	<target name="p0000">
+		<exec command="java" dir="./bin">
+			<arg value="nort.tools.clicker.CoordinatesClickerP0000"/>
+			<arg value="${p0000.image}"/>
+			<arg value="${p0000.format}"/>
+		</exec>
+	</target>
+
+	<target name="p0001">
+		<exec command="java" dir="./bin">
+			<arg value="nort.tools.clicker.CoordinatesClickerP0001"/>
+			<arg value="${p0001.image}"/>
+			<arg value="${p0001.csvFormat}"/>
+		</exec>
+	</target>
+
+</project>
