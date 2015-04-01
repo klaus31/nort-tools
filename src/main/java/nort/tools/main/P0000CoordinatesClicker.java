@@ -5,15 +5,12 @@ import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import nort.tools.NortConfig;
-import nort.tools.clicker.CoordinatesClicker;
 
-public class P0000CoordinatesClicker extends CoordinatesClicker {
+public class P0000CoordinatesClicker extends CoordinatesClicker1 {
 
-  private static Image image;
   private static String format;
 
   public static void main(String[] args) {
-    image = new Image(NortConfig.get("p0000.image"), 800, 600, true, true);
     format = NortConfig.get("p0001.format");
     Application.launch(args);
   }
@@ -34,7 +31,7 @@ public class P0000CoordinatesClicker extends CoordinatesClicker {
   }
 
   @Override
-  public Image getImage() {
-    return image;
+  public void setImage() {
+    image = new Image(NortConfig.get("p0000.image"), 800, 600, true, true);
   }
 }

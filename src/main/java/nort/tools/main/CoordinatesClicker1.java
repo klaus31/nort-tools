@@ -1,38 +1,40 @@
-package nort.tools.clicker;
+package nort.tools.main;
 
 import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public abstract class CoordinatesClicker extends Application {
+public abstract class CoordinatesClicker1 extends Application {
+
+  protected Image image;
 
   public abstract EventHandler<MouseEvent> getEventHandler();
 
-  public abstract Image getImage();
+  // this.image = new Image....
+  public abstract void setImage();
 
   @Override
   public void start(Stage stage) throws IOException {
     // load the image
-    Image image = getImage();
-    // simple displays ImageView the image as is
+    setImage();
+    // image
     ImageView iv1 = new ImageView();
     iv1.setImage(image);
     iv1.setOnMouseClicked(this.getEventHandler());
-    Group root = new Group();
-    Scene scene = new Scene(root);
-    scene.setFill(Color.BLACK);
-    HBox box = new HBox();
+    // scene
+    StackPane box = new StackPane();
     box.getChildren().add(iv1);
-    root.getChildren().add(box);
+    Scene scene = new Scene(box);
+    scene.setFill(Color.BLACK);
+    // stage
     stage.setTitle("ImageView");
     stage.setWidth(415);
     stage.setHeight(200);

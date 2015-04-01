@@ -12,9 +12,8 @@ import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import nort.tools.NortConfig;
-import nort.tools.clicker.CoordinatesClicker;
 
-public class P0001CoordinatesClicker extends CoordinatesClicker {
+public class P0001CoordinatesClicker extends CoordinatesClicker1 {
 
   private static String imageIn;
   private static String csvFormat;
@@ -71,7 +70,7 @@ public class P0001CoordinatesClicker extends CoordinatesClicker {
   }
 
   @Override
-  public Image getImage() {
-    return new Image(imageIn, 800, 600, true, true);
+  public void setImage() {
+    image = new Image(imageIn, 800, 600, true, true);
   }
 }
